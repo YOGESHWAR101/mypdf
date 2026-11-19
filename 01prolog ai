@@ -1,0 +1,103 @@
+## **Prolog Practical – Program 1 (PR-1)**
+
+**Program: Facts, Queries and Arithmetic Operations**
+
+### **Complete Code**
+
+```
+likes(ram,mango).
+likes(bill,cindy).
+girl(seema).
+red(rose).
+owns(john,gold).
+
+c_to_f(C,F):-
+    F is (C*9/5)+32.
+
+below_freezing(C):-
+    C =< 0.
+
+f_to_c(F,C):-
+    C is (F-32)*5/9.
+```
+
+### **Queries and Outputs**
+
+**1.**
+
+```
+?- likes(ram,What).
+```
+
+Output: `What = mango.`
+
+**2.**
+
+```
+?- likes(Who,cindy).
+```
+
+Output: `Who = bill.`
+
+**3.**
+
+```
+?- girl(Who).
+```
+
+Output: `Who = seema.`
+
+**4.**
+
+```
+?- red(What).
+```
+
+Output: `What = rose.`
+
+**5.**
+
+```
+?- owns(Who,What).
+```
+
+Output:
+
+```
+Who = john,
+What = gold.
+```
+
+**6. Celsius to Fahrenheit**
+
+```
+?- c_to_f(100,X).
+```
+
+Output: `X = 212.0.`
+
+**7. Below Freezing**
+
+```
+?- below_freezing(15).
+```
+
+Output: `false.`
+
+**8. Fahrenheit to Celsius**
+
+```
+?- f_to_c(212,X).
+```
+
+Output: `X = 100.0.`
+
+### **Practical 1 Viva**
+
+1. What is Prolog? – Logic programming language.
+2. What are facts? – True statements.
+3. What are rules? – Conditions used to derive results.
+4. What is a query? – A question asked to Prolog.
+5. What is `is`? – Used for arithmetic calculations.
+
+**This is the PR-1 program you shared earlier.**
