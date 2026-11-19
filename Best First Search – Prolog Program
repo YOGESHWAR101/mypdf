@@ -1,0 +1,48 @@
+
+## **Best First Search – Prolog Program**
+
+```
+
+edge(a,b).
+edge(a,c).
+edge(b,d).
+edge(c,e).
+edge(d,g).
+edge(e,g).
+
+h(b,4).
+h(c,2).
+h(d,3).
+h(e,1).
+h(g,0).
+
+best_first(Start,Goal,Path):-
+    search([(Start,[Start])],Goal,Path).
+
+search([(Goal,Path)|_],Goal,Path).
+
+search([(Node,Path)|Rest],Goal,Solution):-
+    findall((H,Next,[Next|Path]),
+        (edge(Node,Next), h(Next,H)),
+        Children),
+    append(Rest,Children,Open),
+    sort(Open,Sorted),
+    search_nodes(Sorted,Goal,Solution).
+
+search_nodes([(_,Node,Path)|Rest],Goal,
+             Solution):-
+    search([(Node,Path)|Rest],Goal,Solution).
+
+```.................................
+
+## **Query**
+
+```
+?- best_first(a,g,Path).
+```
+
+## **Expected Output**
+
+```
+Path = [a,c,e,g].
+```
