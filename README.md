@@ -104,14 +104,23 @@ Check resources, modify settings if possible, restart, and test.
 
 aiiiiiiiiiiiiiiiiiiiiiiiiiii
 
-Below are all 4 Prolog practical programs in exam format:
-1.	Program Name
-2.	Complete Code
-3.	Query to Execute
-4.	Expected Output
+  ..................aiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+
+
+  Below are all **4 Prolog practical programs** in exam format:
+
+1. Program Name
+2. Complete Code
+3. Query to Execute
+4. Expected Output
+
 You can copy these directly into your practical notebook.
-1. Basic Prolog Program and Temperature Conversion
-Complete Code:
+
+# **1. Basic Prolog Program and Temperature Conversion**
+
+**Complete Code:**
+
+```
 likes(ram,mango).
 likes(bill,cindy).
 girl(seema).
@@ -129,38 +138,100 @@ below_freezing(C):-
 % Fahrenheit to Celsius
 f_to_c(F,C):-
     C is (F-32)*5/9.
-Queries and Output:
+```
+
+**Queries and Output:**
+
 Query 1:
+
+```
 ?- likes(ram,mango).
+```
+
 Output:
+
+```
 true.
+```
+
 Query 2:
+
+```
 ?- likes(ram,What).
+```
+
 Output:
+
+```
 What = mango.
+```
+
 Query 3:
+
+```
 ?- red(What).
+```
+
 Output:
+
+```
 What = rose.
+```
+
 Query 4:
+
+```
 ?- owns(Who,What).
+```
+
 Output:
+
+```
 Who = john,
 What = gold.
+```
+
 Query 5:
+
+```
 ?- c_to_f(100,F).
+```
+
 Output:
+
+```
 F = 212.
+```
+
 Query 6:
+
+```
 ?- f_to_c(212,C).
+```
+
 Output:
+
+```
 C = 100.
+```
+
 Query 7:
+
+```
 ?- below_freezing(-5).
+```
+
 Output:
+
+```
 true.
-2. Eight Queens Problem
-Complete Code:
+```
+
+# **2. Eight Queens Problem**
+
+**Complete Code:**
+
+```
 queens(Solution):-
     permutation([1,2,3,4,5,6,7,8],Solution),
     safe(Solution).
@@ -187,13 +258,27 @@ check(Queen,[Next|Rest],Distance):-
 
     % Check with next queen
     check(Queen,Rest,D).
-Query:
+```
+
+**Query:**
+
+```
 ?- queens(Solution).
-Expected Output (one valid solution):
+```
+
+**Expected Output (one valid solution):**
+
+```
 Solution = [1,5,8,6,3,7,2,4].
+```
+
 Note: The order of solutions can vary depending on the Prolog implementation.
-3. Depth First Search (DFS)
-Complete Code:
+
+# **3. Depth First Search (DFS)**
+
+**Complete Code:**
+
+```
 solve(Node,Solution):-
     depthfirst([],Node,Solution).
 
@@ -215,12 +300,25 @@ edge(5,6).
 
 % Goal
 goal(6).
-Query:
+```
+
+**Query:**
+
+```
 ?- solve(1,Solution).
-Output:
+```
+
+**Output:**
+
+```
 Solution = [6,5,3,1].
-4. Best First Search
-Complete Code:
+```
+
+# **4. Best First Search**
+
+**Complete Code:**
+
+```
 edge(a,b).
 edge(a,c).
 edge(b,d).
@@ -259,21 +357,37 @@ search_nodes([(_,Node,Path)|Rest],Goal,
 search_nodes([(Node,Path)|Rest],Goal,
     Solution):-
     search([(Node,Path)|Rest],Goal,Solution).
-Important correction: Use the following search_nodes definition instead of the three definitions above:
+```
+
+**Important correction:** Use the following `search_nodes` definition instead of the three definitions above:
+
+```
 search_nodes([(H,Node,Path)|Rest],Goal,Solution):-
     search([(Node,Path)|Rest],Goal,Solution).
-Query:
+```
+
+**Query:**
+
+```
 ?- best_first(a,g,Path).
-Output:
+```
+
+**Output:**
+
+```
 Path = [g,e,c,a].
-Quick revision for practical exam
-No.	Program name	Query
-1	Basic Prolog	?- likes(ram,mango).
-2	Eight Queens	?- queens(Solution).
-3	DFS	?- solve(1,Solution).
-4	Best First Search	?- best_first(a,g,Path).
-Exam tip: First save the complete code in the Program editor. Then execute the query in the Query/Goal section. The output will appear below.
-  
+```
+
+## **Quick revision for practical exam**
+
+| No. | Program name      | Query                      |
+| --- | ----------------- | -------------------------- |
+| 1   | Basic Prolog      | `?- likes(ram,mango).`     |
+| 2   | Eight Queens      | `?- queens(Solution).`     |
+| 3   | DFS               | `?- solve(1,Solution).`    |
+| 4   | Best First Search | `?- best_first(a,g,Path).` |
+
+**Exam tip:** First save the complete code in the Program editor. Then execute the query in the Query/Goal section. The output will appear below.
  
         
 
