@@ -1,0 +1,41 @@
+
+
+### **Depth First Search (DFS) – Prolog Program**
+
+```
+
+solve(Node,Solution):-
+    depthfirst([],Node,Solution).
+
+% depthfirst(Path,Node,Solution).
+
+depthfirst(Path,Node,[Node|Path]):-
+    goal(Node).
+
+depthfirst(Path,Node,Sol):-
+    edge(Node,Node1),
+    not(member(Node1,Path)),
+    depthfirst([Node|Path],Node1,Sol).
+
+edge(1,3).
+edge(2,4).
+edge(3,5).
+edge(5,6).
+
+goal(6).
+
+```
+
+### **Query**
+
+```
+?- solve(1, Solution).
+```
+
+### **Output**
+
+```
+Solution = [6,5,3,1].
+```
+
+**Note:** The solution is displayed in reverse order (goal to starting node), as written in your program.
